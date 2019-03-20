@@ -53,4 +53,16 @@ end
 
 def get_average_age_for_season(data, season)
   # code here
+  age = 0
+  count = 0
+  data[season].each do |bio|
+    bio.each do |key, val|
+      if key == "age"
+        age += val.to_f
+        count += 1
+      end
+    end
+  end
+  average = (age/count).round
+  return average
 end

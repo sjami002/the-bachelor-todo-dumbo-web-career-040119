@@ -12,6 +12,15 @@ end
 
 def get_contestant_name(data, occupation)
   # code here
+  data.each do |season, arrays|
+    arrays.each do |bio|
+      bio.each do |key, value|
+        if value == occupation
+          return bio["name"]
+        end
+      end
+    end
+  end
 end
 
 def count_contestants_by_hometown(data, hometown)
